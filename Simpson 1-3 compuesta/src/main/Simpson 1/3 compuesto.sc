@@ -1,3 +1,10 @@
+def simpson13(b : Int, a : Int, f : Double => Double): Double ={
+  val h = b - a
+  val x = (a+b)/2.0
+  val denominador = (f(a)+ 4 * f(x)+ f(b)) /6
+  h * denominador
+}
+
 def simpsonCom(f : Double => Double, down : Int, up : Double, interval : Int) : Double = {
   val h = ((up - down) * 1.0) / interval
   val xj = (j : Double) => down + ((j * h)* 1.0)
@@ -14,3 +21,8 @@ def simpsonExt (f : Double => Double, down : Int, up : Int): Double = {
     2 * (2 to n - 2 by 2).map(func1(_)).sum + f(up)
   (funciones * h) / 30
 }
+def f1si (x:Double) = math.pow(x,2) + 8 * x - 12
+integracion(5,3,f1si)
+def f1 (x :Double) = (Math.pow(x,2) + 8 * x - 12)
+simpsonCom(f1, 3, 5, 7)
+

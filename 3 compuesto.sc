@@ -14,3 +14,4 @@ def simpsonExt (f : Double => Double, down : Int, up : Int): Double = {
     2 * (2 to n - 2 by 2).map(func1(_)).sum + f(up)
   (funciones * h) / 30
 }
+
